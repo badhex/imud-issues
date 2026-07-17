@@ -1,0 +1,128 @@
+name: Bug report
+description: Report something broken in InflictMUD.
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a problem. Please fill in the fields that apply.
+
+        If you opened this from the in-game bug button, paste the copied diagnostic report into the Diagnostics field below before submitting.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Briefly describe what broke. Include the exact UI, command, item, monster, room, store action, or system involved.
+      placeholder: "Example: Buying an Arcanits pack completed in Stripe, but my in-game balance did not update."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: What should the game have done instead?
+      placeholder: "Example: My Arcanits balance should increase after checkout completes."
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual behavior
+      description: What actually happened? Include visible error messages, stuck states, missing updates, wrong values, or disconnects.
+      placeholder: "Example: The checkout closed, but the balance stayed at 0 and no error was shown."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Reproduction steps
+      description: List the smallest set of steps that triggers the problem.
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: game-context
+    attributes:
+      label: Game context
+      description: Add any relevant in-game context. Leave unknown fields blank.
+      value: |
+        Character:
+        Area / room:
+        Command or action:
+        Item / skill / monster / NPC:
+        Account ID:
+    validations:
+      required: false
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: Frequency
+      description: How often does this happen?
+      options:
+        - Always
+        - Sometimes
+        - Once
+        - Not sure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How much does this affect play?
+      options:
+        - Blocking - I cannot continue
+        - Major - core gameplay or purchases are affected
+        - Minor - inconvenient but avoidable
+        - Cosmetic - display or text issue only
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Workaround
+      description: If you found a way around the problem, describe it here.
+      placeholder: "Example: Reloading the page refreshed the balance."
+    validations:
+      required: false
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics / logs
+      description: Paste the diagnostic report copied by the in-game bug button. You may also add browser console logs or other relevant details.
+      placeholder: "Paste the copied diagnostic report here."
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: attachments
+    attributes:
+      label: Attachments
+      description: Add screenshots, short recordings, or links if they help explain the problem.
+      placeholder: "Drag and drop screenshots or recordings here after the issue is created, or paste links."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Before submitting
+      options:
+        - label: I checked that this report does not include passwords, one-time codes, or private authentication tokens.
+          required: true
