@@ -9,7 +9,7 @@ body:
       value: |
         Thanks for taking the time to report a problem. Please fill in the fields that apply.
 
-        If you opened this from the in-game bug button, paste the copied diagnostic report into the Diagnostics field below before submitting.
+        If you opened this from the in-game bug button, the Support trace ID should already be filled in. That ID lets us find the related server logs without asking you to share client logs.
 
   - type: textarea
     id: problem
@@ -64,6 +64,15 @@ body:
     validations:
       required: false
 
+  - type: input
+    id: support-trace-id
+    attributes:
+      label: Support trace ID
+      description: Filled by the in-game bug button. If it is blank, copy the trace ID from the in-game dialog.
+      placeholder: "imud-YYYYMMDDHHMMSS-xxxxxxxx"
+    validations:
+      required: false
+
   - type: dropdown
     id: frequency
     attributes:
@@ -101,20 +110,10 @@ body:
       required: false
 
   - type: textarea
-    id: diagnostics
-    attributes:
-      label: Diagnostics / logs
-      description: Paste the diagnostic report copied by the in-game bug button. You may also add browser console logs or other relevant details.
-      placeholder: "Paste the copied diagnostic report here."
-      render: text
-    validations:
-      required: false
-
-  - type: textarea
     id: attachments
     attributes:
       label: Attachments
-      description: Add screenshots, short recordings, or links if they help explain the problem.
+      description: Add screenshots, short recordings, or links if they help explain the problem. Do not paste passwords, one-time codes, or private authentication tokens.
       placeholder: "Drag and drop screenshots or recordings here after the issue is created, or paste links."
     validations:
       required: false
