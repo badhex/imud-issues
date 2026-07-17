@@ -9,7 +9,9 @@ body:
       value: |
         Thanks for taking the time to report a problem. Please fill in the fields that apply.
 
-        If you opened this from the in-game bug button, the Support trace ID should already be filled in. That ID lets us find the related server logs without asking you to share client logs.
+        If you opened this from the in-game bug button, the Support trace ID and Game context fields should already be filled in. The trace ID lets us find the related server logs.
+
+        The in-game dialog may show client-side console messages or errors. Paste them into the field below only if they look relevant to the problem.
 
   - type: textarea
     id: problem
@@ -68,8 +70,17 @@ body:
     id: support-trace-id
     attributes:
       label: Support trace ID
-      description: Filled by the in-game bug button. If it is blank, copy the trace ID from the in-game dialog.
+      description: Filled by the in-game bug button. If it is blank, submit the report anyway.
       placeholder: "imud-YYYYMMDDHHMMSS-xxxxxxxx"
+    validations:
+      required: false
+
+  - type: textarea
+    id: client-console
+    attributes:
+      label: Client-side console messages / errors
+      description: If the in-game dialog showed relevant browser console messages or errors, paste them here. Leave blank if there were none or they do not seem related.
+      placeholder: "Paste messages from the in-game dialog here if relevant."
     validations:
       required: false
 
